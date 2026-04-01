@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: Update with your father's name -->
+  <title>Stories — Arthur J. Whitmore</title>
+  <meta name="description" content="Stories and writing by Arthur J. Whitmore." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Arthur J. Whitmore</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stories.html" class="active">Stories</a></li>
+        <li><a href="guestbook.html">Guestbook</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Content ─────────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+
+      <p class="section-label">A collection of tales</p>
+      <h1 class="page-title">The Stories</h1>
+      <p class="page-subtitle">Memory, adventure, and the occasional moment of grace</p>
+
+      <div class="ornament">✦</div>
+
+      <!-- ============================================================
+           HOW TO ADD MORE STORIES
+           ─────────────────────────────────────────────────────────────
+           OPTION A — Expandable story (short stories, all on this page):
+             Copy one of the <article class="story-card"> blocks below
+             and fill in: category, title, excerpt, and the full story
+             text inside the <div class="story-full"> block.
+
+           OPTION B — Separate page (longer stories):
+             1. Duplicate "story-template.html", rename it (e.g. "story-4.html")
+             2. Fill in the title and body text in that file
+             3. In the story card below, change the <a href="..."> link to
+                point to that file instead of using the expand button.
+
+           Both options can coexist — mix and match as needed.
+           ============================================================ -->
+
+      <div class="stories-grid">
+
+        <!-- ── STORY 1 ─────────────────────────────────────────── -->
+        <article class="story-card" id="story-1">
+          <div class="story-info">
+            <!-- EDIT: Update category, title, excerpt -->
+            <p class="story-meta">Memoir · 1962</p>
+            <h2 class="story-title">The Night We Got Lost in the Dales</h2>
+            <p class="story-excerpt">
+              Three young men with a map, a compass none of them could read properly,
+              and far too much confidence — a recipe, as it turned out, for one
+              of the more memorable evenings of Arthur's early life.
+            </p>
+            <!-- Button: click to expand the full story on this page -->
+            <button class="story-expand-btn"
+                    aria-expanded="false"
+                    aria-controls="story-1-full"
+                    onclick="toggleStory(this, 'story-1-full')">
+              Read the story <span class="arrow">▼</span>
+            </button>
+          </div>
+
+          <!-- EDIT: Paste or type the full story text inside this div -->
+          <div class="story-full" id="story-1-full" role="region" aria-label="Full story">
+            <p>
+              It was the summer of 1962, and Geoffrey Marsh had acquired — from where,
+              none of us could quite remember — an Ordnance Survey map of the Yorkshire
+              Dales. He spread it across the bonnet of his father's Austin Cambridge in
+              the car park of a pub in Grassington with the authority of a general
+              planning a campaign, and pointed northwest.
+            </p>
+            <p>
+              "Three hours," he said. "Easy walking. We'll be back for last orders."
+            </p>
+            <p>
+              The third member of our party, a cheerful fellow named Malcolm who
+              worked at the bank and had never been further north than Harrogate,
+              nodded with complete confidence. I kept my mouth shut. I had been in
+              the scouts. I knew what a contour line meant. I said nothing, because
+              Geoffrey was the sort of man who did not appreciate being contradicted
+              in front of a map.
+            </p>
+            <p>
+              We set off at half past four on a fine June evening, the Dales spread
+              around us in that particular golden light that makes you feel you are
+              walking inside a painting. For the first hour everything went beautifully.
+              We talked about work and cricket and a girl named Susan who both Geoffrey
+              and Malcolm had been keen on until she married a dentist in Leeds and
+              settled the matter.
+            </p>
+            <p>
+              Then the light changed. The path forked without warning. Geoffrey
+              consulted the map, turned it forty-five degrees, turned it back,
+              and said "right" with absolute certainty. We went right. Forty minutes
+              later we were standing on the edge of a bog that was not on the map,
+              in a mist that had arrived without invitation, and the pub was — as
+              best as any of us could tell — somewhere in the general direction
+              of tomorrow.
+            </p>
+            <p>
+              We were found, eventually, by a farmer and his dog, both of whom
+              regarded us with the same steady, mild contempt. He pointed us down
+              a track, said something in a dialect I could only partially follow,
+              and went back to whatever farmers do at nine o'clock at night on a
+              Tuesday in June.
+            </p>
+            <p>
+              We missed last orders. We drove home mostly in silence. Geoffrey
+              still insists to this day that the map was wrong. Some friendships,
+              I have come to understand, depend on allowing a man his dignity.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── STORY 2 ─────────────────────────────────────────── -->
+        <article class="story-card" id="story-2">
+          <div class="story-info">
+            <!-- EDIT: Update category, title, excerpt -->
+            <p class="story-meta">Travel · 1978</p>
+            <h2 class="story-title">A Train Journey Through Portugal</h2>
+            <p class="story-excerpt">
+              Travelling from Lisbon to Porto on a train that stopped with mysterious
+              frequency, Arthur discovered that a warm afternoon, a poor grasp of
+              Portuguese, and the generosity of strangers could add up to something
+              rather wonderful.
+            </p>
+            <!-- OPTION B: Link to a separate story page instead of expanding inline -->
+            <a href="story-portugal.html" class="btn-read">Read the full story →</a>
+          </div>
+
+          <!-- No expand div needed when using a separate page link -->
+        </article>
+
+        <!-- ── STORY 3 ─────────────────────────────────────────── -->
+        <article class="story-card" id="story-3">
+          <div class="story-info">
+            <!-- EDIT: Update category, title, excerpt -->
+            <p class="story-meta">Childhood · 1948</p>
+            <h2 class="story-title">The Hen Who Lived in Our Kitchen</h2>
+            <p class="story-excerpt">
+              Her name, insofar as any of the family agreed on it, was Edith. She
+              had very definite opinions about the furniture and no respect whatsoever
+              for mealtimes.
+            </p>
+            <button class="story-expand-btn"
+                    aria-expanded="false"
+                    aria-controls="story-3-full"
+                    onclick="toggleStory(this, 'story-3-full')">
+              Read the story <span class="arrow">▼</span>
+            </button>
+          </div>
+
+          <div class="story-full" id="story-3-full" role="region" aria-label="Full story">
+            <p>
+              In the autumn of 1948, when I was seven years old, a Rhode Island Red
+              hen of formidable personality entered our lives and did not leave for
+              the better part of two years. Her name, insofar as there was consensus
+              on the matter, was Edith — my sister called her Beatrice, my youngest
+              brother called her Chicken, and my father, on the occasions when she
+              stood on his newspaper, called her several other things entirely.
+            </p>
+            <p>
+              She had arrived as one of a pair my mother obtained from the farmer
+              at the edge of the village, in one of those postwar schemes to keep
+              a household running on ingenuity and the occasional egg. The other
+              hen — whose name I no longer remember, if we ever gave her one —
+              behaved normally, lived in the garden, and eventually provided a
+              Sunday lunch of no particular memory. Edith had other ideas.
+            </p>
+            <p>
+              Within a fortnight she had established that the corner beside the
+              range was hers, that she was entitled to whatever crumbs fell from
+              the kitchen table, and that the sound of my mother peeling potatoes
+              was an invitation to supervise at close quarters. She was not, my
+              mother said, a pet. She was a farm animal who had made a series of
+              unilateral decisions about her domestic arrangements.
+            </p>
+            <p>
+              She was, I should add, an excellent layer. Whatever eccentricities
+              Edith had indoors, she was reliable in the one matter that counted.
+              My father, who complained about her constantly and with considerable
+              creativity, was also observed on more than one occasion sharing his
+              toast with her while reading his paper on a Saturday morning.
+            </p>
+            <p>
+              She died peacefully in the spring of 1950, of what I believe was
+              simply old age. There was a brief silence at dinner the first evening
+              she was gone. My father remarked that it was "quite peaceful, actually,"
+              and then looked slightly guilty about it. My sister cried. I ate my
+              supper and thought about her, and how odd it is the things you miss —
+              not the grand events, but a small warm shape in the corner of a
+              winter kitchen.
+            </p>
+          </div>
+        </article>
+
+        <!-- ── STORY 4 — ADD YOUR OWN ──────────────────────────── -->
+        <!-- To add a new story: copy this whole <article> block and fill it in -->
+        <article class="story-card" id="story-4">
+          <div class="story-info">
+            <!-- EDIT: Update these details -->
+            <p class="story-meta">Genre · Year</p>
+            <h2 class="story-title">Your Next Story Title Goes Here</h2>
+            <p class="story-excerpt">
+              A short sentence or two describing the story — enough to make a reader
+              curious, but not so much that it gives the ending away.
+            </p>
+            <button class="story-expand-btn"
+                    aria-expanded="false"
+                    aria-controls="story-4-full"
+                    onclick="toggleStory(this, 'story-4-full')">
+              Read the story <span class="arrow">▼</span>
+            </button>
+          </div>
+
+          <!-- EDIT: Paste the full story text here -->
+          <div class="story-full" id="story-4-full" role="region" aria-label="Full story">
+            <p>
+              The full text of the story goes here. You can have as many paragraphs
+              as you like. Just keep each paragraph inside its own &lt;p&gt; tags.
+            </p>
+            <p>
+              Add more paragraphs like this one, separated by blank lines in the
+              code for clarity. The story will expand smoothly when the reader
+              clicks the "Read the story" button.
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /.stories-grid -->
+
+    </div><!-- /.page-wrapper -->
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p class="footer-name">Arthur J. Whitmore</p>
+    <p>© <span id="year"></span> · Built with love by his family</p>
+  </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Expand / collapse inline stories
+    function toggleStory(btn, contentId) {
+      const content = document.getElementById(contentId);
+      const isOpen  = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      content.classList.toggle('open', !isOpen);
+      btn.querySelector('.arrow').textContent = isOpen ? '▼' : '▲';
+
+      if (!isOpen) {
+        // Smooth scroll to the story heading
+        btn.closest('.story-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+
+</body>
+</html>

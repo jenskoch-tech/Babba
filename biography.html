@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: Update with your father's name -->
+  <title>Biography — Arthur J. Whitmore</title>
+  <meta name="description" content="A biography of Arthur J. Whitmore, writer and storyteller." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Arthur J. Whitmore</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html" class="active">Biography</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="guestbook.html">Guestbook</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Content ─────────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+
+      <!-- Page heading -->
+      <p class="section-label">About the Author</p>
+      <h1 class="page-title">Biography</h1>
+      <p class="page-subtitle">A life lived with curiosity and good humour</p>
+
+      <div class="ornament">✦</div>
+
+      <!-- ── Bio Layout ────────────────────────────────────────── -->
+      <div class="bio-layout">
+
+        <!-- Portrait Column -->
+        <div class="bio-photo-wrap">
+
+          <!-- ============================================================
+               PHOTO: Replace the placeholder <div> below with an <img> tag
+               when you have a photo ready. Example:
+
+               <img src="images/portrait.jpg"
+                    alt="Portrait of Arthur J. Whitmore"
+                    class="bio-photo" />
+
+               Recommended: crop the photo to a 3:4 (portrait) ratio before
+               uploading. Save it in an "images/" folder alongside this file.
+               ============================================================ -->
+          <div class="bio-photo-placeholder" aria-label="Portrait photo placeholder">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" stroke-width="1.5"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Portrait photograph<br/>to be added here</span>
+          </div>
+
+          <!-- Caption beneath the photo -->
+          <!-- EDIT: Update name and approximate year of photo -->
+          <p style="text-align:center; font-family:var(--font-accent); font-style:italic; font-size:0.9rem; color:var(--gray); margin-top:1rem;">
+            Arthur J. Whitmore<br/>
+            <span style="font-size:0.8rem; color:var(--gray-light);">circa 1985</span>
+          </p>
+        </div>
+
+        <!-- Biography Text Column -->
+        <div class="bio-text">
+
+          <!-- ============================================================
+               BIOGRAPHY: Replace all the paragraphs below with the real
+               biography. Keep paragraphs reasonably short for easy reading.
+               ============================================================ -->
+
+          <h2 style="margin-bottom:0.25rem;">Arthur James Whitmore</h2>
+          <!-- EDIT: Update birth year / place -->
+          <p style="font-family:var(--font-accent); font-style:italic; color:var(--gold); margin-bottom:1.5rem;">
+            Born 1941, Somerset, England
+          </p>
+
+          <p>
+            Arthur James Whitmore was born on a grey February morning in 1941 in the
+            village of Cheddar, Somerset — a place famous for its caves, its gorge,
+            and, he would tell you firmly, its cheese. He was the eldest of four
+            children in a household that was short on money but long on books, laughter,
+            and the particular chaos that comes with a dog, several cats, and a
+            hen that had decided the kitchen was its domain.
+          </p>
+
+          <p>
+            He attended the local grammar school, where an English teacher named
+            Mr. Pemberton — perpetually dusty, perpetually enthusiastic — introduced
+            him to Dickens, Hardy, and the idea that ordinary lives were extraordinary
+            material. It was a lesson that stayed with him.
+          </p>
+
+          <p>
+            After completing his national service, Arthur trained as a surveyor and
+            spent the better part of his working life in that profession, raising a
+            family in the process, travelling when he could, and paying very close
+            attention to everything along the way. He had a gift for noticing the
+            telling detail — the raised eyebrow, the hesitation before a lie, the
+            way a place smells different on a Sunday morning.
+          </p>
+
+          <p>
+            He has been married to Margaret for over fifty years. They have three
+            children and seven grandchildren, each of whom has at some point been
+            told a story at bedtime that went on rather longer than planned. He
+            remains unapologetic about this.
+          </p>
+
+          <!-- EDIT: Add or change this final paragraph to describe when/why he started writing -->
+          <p>
+            He began writing his stories down in earnest after retirement, encouraged
+            by his family to stop keeping them to himself. What follows on this site
+            is the result — a collection assembled over several years of quiet
+            mornings, strong tea, and the particular pleasure of getting things right.
+          </p>
+
+          <div class="ornament">✦</div>
+
+          <!-- Optional: a favourite quote attributed to him -->
+          <blockquote>
+            "A story doesn't need to be long to be worth hearing. It only needs
+            to be true — or close enough to truth that it tells you something real."
+          </blockquote>
+
+        </div>
+      </div><!-- /.bio-layout -->
+
+    </div><!-- /.page-wrapper -->
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p class="footer-name">Arthur J. Whitmore</p>
+    <p>© <span id="year"></span> · Built with love by his family</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

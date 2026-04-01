@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: Update with your father's name -->
+  <title>Guestbook — Arthur J. Whitmore</title>
+  <meta name="description" content="Leave a message for Arthur J. Whitmore." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Arthur J. Whitmore</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="guestbook.html" class="active">Guestbook</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Content ─────────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+
+      <p class="section-label">Kind words from readers</p>
+      <h1 class="page-title">Guestbook</h1>
+      <!-- EDIT: Adjust the subtitle to taste -->
+      <p class="page-subtitle">Leave a note — Arthur reads every one</p>
+
+      <div class="ornament">✦</div>
+
+      <!-- ── Note about the form ──────────────────────────────── -->
+      <!--
+        IMPORTANT — HOW THIS FORM WORKS:
+        ─────────────────────────────────────────────────────────────
+        GitHub Pages hosts only static files — it cannot process
+        form submissions directly. To make this guestbook actually
+        work, you have two simple, free options:
+
+        OPTION A — Formspree (recommended, free, no coding needed):
+          1. Go to https://formspree.io and create a free account
+          2. Create a new form; Formspree gives you an endpoint URL
+             that looks like: https://formspree.io/f/xyzabcde
+          3. Change the <form action="..."> attribute below to that URL
+          4. Done! Submissions arrive in your Formspree inbox by email.
+
+        OPTION B — EmailJS (free, sends email directly):
+          1. Go to https://emailjs.com and create a free account
+          2. Follow their setup guide; you'll get a service ID,
+             template ID, and public key
+          3. Replace the form submission handler below with the
+             EmailJS send() call (see their docs for the exact code)
+
+        In either case, you will want to REMOVE the sample entries
+        at the bottom of this page once real ones come in — or simply
+        leave them as examples of the kind of messages expected.
+
+        For now, the form shows a "Thank you" message on submission
+        but does not actually send anything until you connect a service.
+        ─────────────────────────────────────────────────────────────
+      -->
+
+      <!-- ── Guestbook Form ─────────────────────────────────────── -->
+      <!--
+        EDIT: Replace YOUR_FORMSPREE_ENDPOINT with the URL from Formspree,
+        or use the JavaScript submission handler below for EmailJS.
+        Leave action="#" for now if you haven't set up a service yet.
+      -->
+      <div class="guestbook-form" role="region" aria-label="Leave a message">
+        <h2 style="margin-bottom:1.5rem; font-size:1.4rem;">Leave a Message</h2>
+
+        <form id="guestbookForm" action="#" method="POST" novalidate>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required
+                     placeholder="Margaret Smith" autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="relation">How do you know Arthur?</label>
+              <input type="text" id="relation" name="relation"
+                     placeholder="Old friend, family, reader…" />
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address (optional — not displayed publicly)</label>
+            <input type="email" id="email" name="email"
+                   placeholder="you@example.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your message *</label>
+            <textarea id="message" name="message" rows="5" required
+                      placeholder="Write your message here…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+
+        </form>
+
+        <!-- Thank-you message (shown after submission) -->
+        <div id="formSuccess"
+             style="display:none; text-align:center; padding:2rem; font-family:var(--font-accent); font-style:italic; font-size:1.2rem; color:var(--navy);">
+          Thank you for your kind message. Arthur will be delighted to read it.
+        </div>
+      </div>
+
+      <!-- ── Existing Entries ───────────────────────────────────── -->
+      <!--
+        EDIT: Once you receive real guestbook messages, you can add them here
+        by copying the entry-card block pattern below.
+        Remove or replace the sample entries beneath.
+      -->
+      <h2 style="margin-bottom:2rem;">Messages from Readers</h2>
+
+      <div class="guestbook-entries">
+
+        <!-- Sample Entry 1 — EDIT or DELETE when real messages arrive -->
+        <div class="entry-card">
+          <p class="entry-author">Margaret W.</p>
+          <p class="entry-date">Family · March 2024</p>
+          <p class="entry-message">
+            Arthur, The Hen Who Lived in Our Kitchen had me laughing until I cried.
+            You always did tell that story better than anyone. So glad it's written
+            down at last. All my love.
+          </p>
+        </div>
+
+        <!-- Sample Entry 2 — EDIT or DELETE when real messages arrive -->
+        <div class="entry-card">
+          <p class="entry-author">Robert T.</p>
+          <p class="entry-date">Old friend · February 2024</p>
+          <p class="entry-message">
+            I found this site through your daughter. I remember that night in the
+            Dales — you've captured it exactly, except you've been rather kinder
+            to Geoffrey than the situation warranted. Wonderful to read. Hope
+            you're well, Arthur.
+          </p>
+        </div>
+
+        <!-- Sample Entry 3 — EDIT or DELETE when real messages arrive -->
+        <div class="entry-card">
+          <p class="entry-author">Claire & James</p>
+          <p class="entry-date">Grandchildren · January 2024</p>
+          <p class="entry-message">
+            Grandpa, we love your stories. Please write more. Can you do the one
+            about the time Dad got stuck in the tree? You promised you would.
+          </p>
+        </div>
+
+        <!-- ── ADD NEW ENTRIES HERE ─────────────────────────────── -->
+        <!-- Copy the block below and fill in name, date, and message -->
+        <!--
+        <div class="entry-card">
+          <p class="entry-author">Name here</p>
+          <p class="entry-date">Relationship · Month Year</p>
+          <p class="entry-message">
+            Message text here.
+          </p>
+        </div>
+        -->
+
+      </div><!-- /.guestbook-entries -->
+
+    </div><!-- /.page-wrapper -->
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p class="footer-name">Arthur J. Whitmore</p>
+    <p>© <span id="year"></span> · Built with love by his family</p>
+  </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Form: show thank-you on submit (replace with Formspree or EmailJS for real sending)
+    document.getElementById('guestbookForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !message) {
+        alert('Please fill in your name and a message before submitting.');
+        return;
+      }
+
+      // ── If using Formspree, replace this handler with a fetch() call: ──────
+      // fetch('https://formspree.io/f/YOUR_ID', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ name, message, email: document.getElementById('email').value })
+      // }).then(() => showSuccess());
+      // ────────────────────────────────────────────────────────────────────────
+
+      showSuccess();
+    });
+
+    function showSuccess() {
+      document.getElementById('guestbookForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display   = 'block';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ============================================================
+       EDIT: Change the title below to your father's name
+       ============================================================ -->
+  <title>Arthur J. Whitmore — Writer & Storyteller</title>
+  <meta name="description" content="A collection of stories and reflections by Arthur J. Whitmore." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- EDIT: Change to your father's name or initials -->
+      <a href="index.html" class="nav-brand">Arthur J. Whitmore</a>
+
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="guestbook.html">Guestbook</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow fade-in">A Life in Words</p>
+
+      <!-- EDIT: Change to your father's full name -->
+      <h1 class="fade-in fade-in-delay-1">Arthur J. Whitmore</h1>
+
+      <!-- EDIT: Change the subtitle to a short personal tagline or favourite quote -->
+      <p class="hero-subtitle fade-in fade-in-delay-2">
+        "Every life is a story worth telling — here are a few of mine."
+      </p>
+
+      <div class="hero-divider fade-in fade-in-delay-3"></div>
+    </div>
+  </header>
+
+  <!-- ── Welcome Section ──────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+      <div class="welcome-text">
+        <p class="section-label text-center">Welcome</p>
+
+        <!-- EDIT: Replace this introductory paragraph with your own welcome text -->
+        <p class="lead">
+          This small corner of the internet is a place where family, old friends,
+          and curious readers can sit down with a cup of tea and enjoy the stories
+          Arthur has gathered over a lifetime.
+        </p>
+
+        <!-- EDIT: Replace these paragraphs with a warm personal note -->
+        <p>
+          Born in an era before television, Arthur learned early that the best
+          entertainment came from the imagination. Raised in the English countryside
+          and shaped by decades of adventure, travel, and quiet observation, he
+          turned to writing in his later years to preserve the moments that mattered
+          most — and a few that simply made him laugh.
+        </p>
+        <p>
+          The stories here range from childhood memories to travels abroad, from
+          gentle comedy to moments of reflection. They are written for pleasure —
+          his, and hopefully yours.
+        </p>
+        <p>
+          Browse at your leisure. Leave a message in the Guestbook if the spirit
+          moves you. And above all, enjoy.
+        </p>
+      </div>
+
+      <div class="ornament">✦</div>
+
+      <!-- ── Quick Links ─────────────────────────────────────── -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 1rem;">
+
+        <a href="biography.html" style="display:block; padding:2rem; background:var(--white); box-shadow:0 2px 16px rgba(0,0,0,0.07); text-decoration:none; transition:var(--transition); border-top:2px solid var(--gold);"
+           onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <p class="section-label">About</p>
+          <h3 style="margin-bottom:0.5rem;">Biography</h3>
+          <p style="font-size:0.95rem; color:var(--gray); margin:0;">A portrait of a life well lived — the man behind the stories.</p>
+        </a>
+
+        <a href="stories.html" style="display:block; padding:2rem; background:var(--white); box-shadow:0 2px 16px rgba(0,0,0,0.07); text-decoration:none; transition:var(--transition); border-top:2px solid var(--gold);"
+           onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <p class="section-label">Read</p>
+          <h3 style="margin-bottom:0.5rem;">The Stories</h3>
+          <p style="font-size:0.95rem; color:var(--gray); margin:0;">Tales of adventure, memory, and the everyday comedy of life.</p>
+        </a>
+
+        <a href="guestbook.html" style="display:block; padding:2rem; background:var(--white); box-shadow:0 2px 16px rgba(0,0,0,0.07); text-decoration:none; transition:var(--transition); border-top:2px solid var(--gold);"
+           onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <p class="section-label">Connect</p>
+          <h3 style="margin-bottom:0.5rem;">Guestbook</h3>
+          <p style="font-size:0.95rem; color:var(--gray); margin:0;">Leave a kind word — he will enjoy reading every message.</p>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <!-- EDIT: Update name and year -->
+    <p class="footer-name">Arthur J. Whitmore</p>
+    <p>© <span id="year"></span> · Built with love by his family</p>
+  </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
