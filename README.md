@@ -1,4 +1,4 @@
-# Arthur J. Whitmore — Personal Literary Website
+# Jens Koch — Personal Literary Website
 
 A clean, elegant personal website for sharing stories and a biography.
 Ready to deploy on **GitHub Pages** with no build tools or server required.
