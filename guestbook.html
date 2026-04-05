@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- EDIT: Update with your father's name -->
   <title>Guestbook — Peter Koch</title>
-  <meta name="description" content="Leave a message for Peter." />
+  <meta name="description" content="Leave a message for Peter Koch." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,67 +31,27 @@
 
       <p class="section-label">Kind words from readers</p>
       <h1 class="page-title">Guestbook</h1>
-      <!-- EDIT: Adjust the subtitle to taste -->
       <p class="page-subtitle">Leave a note — Peter reads every one</p>
 
       <div class="ornament">✦</div>
 
-      <!-- ── Note about the form ──────────────────────────────── -->
-      <!--
-        IMPORTANT — HOW THIS FORM WORKS:
-        ─────────────────────────────────────────────────────────────
-        GitHub Pages hosts only static files — it cannot process
-        form submissions directly. To make this guestbook actually
-        work, you have two simple, free options:
-
-        OPTION A — Formspree (recommended, free, no coding needed):
-          1. Go to https://formspree.io and create a free account
-          2. Create a new form; Formspree gives you an endpoint URL
-             that looks like: https://formspree.io/f/xyzabcde
-          3. Change the <form action="..."> attribute below to that URL
-          4. Done! Submissions arrive in your Formspree inbox by email.
-
-        OPTION B — EmailJS (free, sends email directly):
-          1. Go to https://emailjs.com and create a free account
-          2. Follow their setup guide; you'll get a service ID,
-             template ID, and public key
-          3. Replace the form submission handler below with the
-             EmailJS send() call (see their docs for the exact code)
-
-        In either case, you will want to REMOVE the sample entries
-        at the bottom of this page once real ones come in — or simply
-        leave them as examples of the kind of messages expected.
-
-        For now, the form shows a "Thank you" message on submission
-        but does not actually send anything until you connect a service.
-        ─────────────────────────────────────────────────────────────
-      -->
-
-      <!-- ── Guestbook Form ─────────────────────────────────────── -->
-      <!--
-        EDIT: Replace YOUR_FORMSPREE_ENDPOINT with the URL from Formspree,
-        or use the JavaScript submission handler below for EmailJS.
-        Leave action="#" for now if you haven't set up a service yet.
-      -->
+      <!-- ── Guestbook Form ────────────────────────────────────── -->
       <div class="guestbook-form" role="region" aria-label="Leave a message">
         <h2 style="margin-bottom:1.5rem; font-size:1.4rem;">Leave a Message</h2>
 
         <form id="guestbookForm" action="#" method="POST" novalidate>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
-
             <div class="form-group">
               <label for="name">Your Name *</label>
               <input type="text" id="name" name="name" required
                      placeholder="Margaret Smith" autocomplete="name" />
             </div>
-
             <div class="form-group">
               <label for="relation">How do you know Peter?</label>
               <input type="text" id="relation" name="relation"
                      placeholder="Old friend, family, reader…" />
             </div>
-
           </div>
 
           <div class="form-group">
@@ -111,7 +70,7 @@
 
         </form>
 
-        <!-- Thank-you message (shown after submission) -->
+        <!-- Shown after successful submission -->
         <div id="formSuccess"
              style="display:none; text-align:center; padding:2rem; font-family:var(--font-accent); font-style:italic; font-size:1.2rem; color:var(--navy);">
           Thank you for your kind message. Peter will be delighted to read it.
@@ -120,47 +79,25 @@
 
       <!-- ── Existing Entries ───────────────────────────────────── -->
       <!--
-        EDIT: Once you receive real guestbook messages, you can add them here
-        by copying the entry-card block pattern below.
-        Remove or replace the sample entries beneath.
+        To add a new entry: copy one <div class="entry-card"> block,
+        fill in the author, date, and message, and save the file.
       -->
       <h2 style="margin-bottom:2rem;">Messages from Readers</h2>
 
       <div class="guestbook-entries">
 
-        <!-- Sample Entry 1 — EDIT or DELETE when real messages arrive -->
         <div class="entry-card">
           <p class="entry-author">Jens</p>
           <p class="entry-date">Son · April 2026</p>
           <p class="entry-message">
-           Babba — this little corner of the internet is our gift to you for your 80th birthday. 
-    You have been telling these stories for decades and it was long past time they were 
-    written down. We hope you enjoy reading them here as much as we have enjoyed helping 
-    you put them together. Many more to come. With all my love.
+            Babba — this little corner of the internet is our gift to you for your 80th birthday.
+            You have been telling these stories for decades and it was long past time they were
+            written down. We hope you enjoy reading them here as much as we have enjoyed helping
+            you put them together. Many more to come. With all my love.
           </p>
         </div>
 
-        <!-- Sample Entry 2 — EDIT or DELETE when real messages arrive -->
-        <div class="entry-card">
-          <p class="entry-author">Robert T.</p>
-          <p class="entry-date">Old friend · February 2024</p>
-          <p class="entry-message">
-           TEST 
-          </p>
-        </div>
-
-        <!-- Sample Entry 3 — EDIT or DELETE when real messages arrive -->
-        <div class="entry-card">
-          <p class="entry-author">Claire & James</p>
-          <p class="entry-date">Grandchildren · January 2024</p>
-          <p class="entry-message">
-            TEST
-          </p>
-        </div>
-
-        <!-- ── ADD NEW ENTRIES HERE ─────────────────────────────── -->
-        <!-- Copy the block below and fill in name, date, and message -->
-        <!--
+        <!-- ── ADD NEW ENTRIES BELOW THIS LINE ───────────────────
         <div class="entry-card">
           <p class="entry-author">Name here</p>
           <p class="entry-date">Relationship · Month Year</p>
@@ -168,7 +105,7 @@
             Message text here.
           </p>
         </div>
-        -->
+        ─────────────────────────────────────────────────────────── -->
 
       </div><!-- /.guestbook-entries -->
 
@@ -182,7 +119,6 @@
   </footer>
 
   <!-- ── Scripts ──────────────────────────────────────────────── -->
- <!-- ── Scripts ──────────────────────────────────────────────── -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -229,5 +165,6 @@
       }
     });
   </script>
+
 </body>
 </html>
