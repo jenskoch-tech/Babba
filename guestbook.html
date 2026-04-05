@@ -182,6 +182,7 @@
   </footer>
 
   <!-- ── Scripts ──────────────────────────────────────────────── -->
+ <!-- ── Scripts ──────────────────────────────────────────────── -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -189,34 +190,44 @@
       document.getElementById('navLinks').classList.toggle('open');
     }
 
-    // Form: show thank-you on submit (replace with Formspree or EmailJS for real sending)
-    document.getElementById('guestbookForm').addEventListener('submit', function(e) {
+    document.getElementById('guestbookForm').addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      const name    = document.getElementById('name').value.trim();
-      const message = document.getElementById('message').value.trim();
+      const name     = document.getElementById('name').value.trim();
+      const relation = document.getElementById('relation').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const message  = document.getElementById('message').value.trim();
 
       if (!name || !message) {
         alert('Please fill in your name and a message before submitting.');
         return;
       }
 
-      // ── If using Formspree, replace this handler with a fetch() call: ──────
-      // fetch('https://formspree.io/f/YOUR_ID', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ name, message, email: document.getElementById('email').value })
-      // }).then(() => showSuccess());
-      // ────────────────────────────────────────────────────────────────────────
+      const btn = this.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
 
-      showSuccess();
+      try {
+        const res = await fetch('https://www.peters-stories.ch/guestbook-submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, relation, email, message }),
+        });
+
+        if (res.ok) {
+          document.getElementById('guestbookForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display   = 'block';
+        } else {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          alert('Something went wrong — please try again.');
+        }
+      } catch {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        alert('Could not connect — please try again.');
+      }
     });
-
-    function showSuccess() {
-      document.getElementById('guestbookForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display   = 'block';
-    }
   </script>
-
 </body>
 </html>
