@@ -1,0 +1,11 @@
+{
+  "name": "peters-stories-guestbook",
+  "main": "index.js",
+  "compatibility_date": "2025-10-08",
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "jens.koch1@googlemail.com"
+    }
+  ]
+}
