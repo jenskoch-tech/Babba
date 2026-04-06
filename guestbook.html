@@ -144,7 +144,7 @@
       btn.disabled = true;
 
       try {
-        const res = await fetch('https://peters-guestbook.jens-koch1.workers.dev', {
+        const res = await fetch('https://peters-stories-guestbook.jens-koch1.workers.dev', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, relation, email, message }),
