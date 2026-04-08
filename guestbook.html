@@ -144,7 +144,7 @@
       btn.disabled = true;
 
       try {
-    fetch('https://www.peters-stories.ch/guestbook-submit', { 
+   const res = await fetch('https://www.peters-stories.ch/guestbook-submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, relation, email, message }),
