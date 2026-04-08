@@ -1,4 +1,4 @@
-var FROM_EMAIL = "guestbook@peters-stories.ch";
+var FROM_EMAIL = "info@peters-stories.ch";
 var TO_EMAIL   = "jens.koch1@googlemail.com";
 
 export default {
