@@ -2,6 +2,7 @@
   "name": "peters-stories-guestbook",
   "main": "index.js",
   "compatibility_date": "2025-10-08",
+  "account_id": "${CLOUDFLARE_ACCOUNT_ID}",
   "send_email": [
     {
       "name": "EMAIL",
