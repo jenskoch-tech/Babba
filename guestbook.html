@@ -144,13 +144,13 @@
       btn.disabled = true;
 
       try {
-   const res = await fetch('https://www.peters-stories.ch/guestbook-submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, relation, email, message }),
-        });
+  const res = await fetch('https://www.peters-stories.ch/guestbook-submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, relation, email, message }),
+  });
 
-        if (res.ok) {
+  if (res.ok) {
           document.getElementById('guestbookForm').style.display = 'none';
           document.getElementById('formSuccess').style.display   = 'block';
         } else {
@@ -158,7 +158,7 @@
           btn.disabled = false;
           alert('Something went wrong — please try again.');
         }
-      } catch {
+      } catch (err) {
         btn.textContent = 'Send Message';
         btn.disabled = false;
         alert('Could not connect — please try again.');
