@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guestbook — Peter Koch</title>
+  <meta name="description" content="Leave a message for Peter Koch." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Peter Koch</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="guestbook.html" class="active">Guestbook</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Content ─────────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+
+      <p class="section-label">Kind words from readers</p>
+      <h1 class="page-title">Guestbook</h1>
+      <p class="page-subtitle">Leave a note — Peter reads every one</p>
+
+      <div class="ornament">✦</div>
+
+      <!-- ── Guestbook Form ────────────────────────────────────── -->
+      <div class="guestbook-form" role="region" aria-label="Leave a message">
+        <h2 style="margin-bottom:1.5rem; font-size:1.4rem;">Leave a Message</h2>
+
+       <form action="https://formsubmit.co/jens.koch1@googlemail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Guestbook Message">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required
+                     placeholder="Margaret Smith" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="relation">How do you know Peter?</label>
+              <input type="text" id="relation" name="relation"
+                     placeholder="Old friend, family, reader…" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address (optional — not displayed publicly)</label>
+            <input type="email" id="email" name="email"
+                   placeholder="you@example.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your message *</label>
+            <textarea id="message" name="message" rows="5" required
+                      placeholder="Write your message here…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+
+        </form>
+
+        <!-- Shown after successful submission -->
+        <div id="formSuccess"
+             style="display:none; text-align:center; padding:2rem; font-family:var(--font-accent); font-style:italic; font-size:1.2rem; color:var(--navy);">
+          Thank you for your kind message. Peter will be delighted to read it.
+        </div>
+      </div>
+
+      <!-- ── Existing Entries ───────────────────────────────────── -->
+      <!--
+        To add a new entry: copy one <div class="entry-card"> block,
+        fill in the author, date, and message, and save the file.
+      -->
+      <h2 style="margin-bottom:2rem;">Messages from Readers</h2>
+
+      <div class="guestbook-entries">
+
+        <div class="entry-card">
+          <p class="entry-author">Jens</p>
+          <p class="entry-date">Son · April 2026</p>
+          <p class="entry-message">
+            Babba — this little corner of the internet is our gift to you for your 80th birthday.
+            You have been telling these stories for decades and it was long past time they were
+            written down. We hope you enjoy reading them here as much as we have enjoyed helping
+            you put them together. Many more to come. With all my love.
+          </p>
+        </div>
+
+        <!-- ── ADD NEW ENTRIES BELOW THIS LINE ───────────────────
+        <div class="entry-card">
+          <p class="entry-author">Name here</p>
+          <p class="entry-date">Relationship · Month Year</p>
+          <p class="entry-message">
+            Message text here.
+          </p>
+        </div>
+        ─────────────────────────────────────────────────────────── -->
+
+      </div><!-- /.guestbook-entries -->
+
+    </div><!-- /.page-wrapper -->
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p class="footer-name">Peter Koch</p>
+    <p>© <span id="year"></span> · Built with love by his family</p>
+  </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+         const name     = document.getElementById('name').value.trim();
+      const relation = document.getElementById('relation').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const message  = document.getElementById('message').value.trim();
+
+      if (!name || !message) {
+        alert('Please fill in your name and a message before submitting.');
+        return;
+      }
+
+      const btn = this.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+  const res = await fetch('https://www.peters-stories.ch/guestbook-submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, relation, email, message }),
+  });
+
+  if (res.ok) {
+          document.getElementById('guestbookForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display   = 'block';
+        } else {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          alert('Something went wrong — please try again.');
+        }
+      } catch (err) {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        alert('Could not connect — please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
