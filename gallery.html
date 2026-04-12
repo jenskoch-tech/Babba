@@ -1,0 +1,23 @@
+<div class="gallery">
+
+  <div class="photo">
+    <img src="https://your-bucket.r2.dev/italy-1965.jpg">
+    <p>Italy, 1965</p>
+  </div>
+
+  <div class="photo">
+    <img src="https://your-bucket.r2.dev/family.jpg">
+    <p>Family gathering</p>
+  </div>
+
+</div>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 8px;
+}
