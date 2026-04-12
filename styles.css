@@ -659,7 +659,6 @@ blockquote {
 .photo {
   height: 220px;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 .photo img {
