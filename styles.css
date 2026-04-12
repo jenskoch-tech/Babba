@@ -665,8 +665,8 @@ blockquote {
 
 .photo img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 220px !important;     /* force height */
+  object-fit: cover !important; /* force crop */
   display: block;
 }
 
