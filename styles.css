@@ -674,4 +674,7 @@ blockquote {
   text-align: center;
   margin: 0;
 }
+.gallery {
+  border: 5px solid red !important;
+}
 
