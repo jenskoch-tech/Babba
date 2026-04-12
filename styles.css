@@ -657,14 +657,17 @@ blockquote {
 }
 
 .photo {
-  height: 220px;
+  border-radius: 10px;
   overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .photo img {
   width: 100%;
-  height: 100%;
+  height: 220px;
   object-fit: cover;
+  display: block;
 }
 
 .photo p {
@@ -674,7 +677,3 @@ blockquote {
   text-align: center;
   margin: 0;
 }
-.gallery {
-  border: 5px solid red !important;
-}
-
