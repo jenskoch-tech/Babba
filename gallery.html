@@ -20,55 +20,69 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="biography.html">Biography</a></li>
         <li><a href="stories.html">Stories</a></li>
-        <li><a href="gallery.html"class="active">Gallery</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="guestbook.html">Guestbook</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- ── Page Content ─────────────────────────────────────────── -->
+  <main>
+    <div class="page-wrapper">
+      <h1 class="page-title">A Selection of Photos</h1>
 
+      <div class="gallery">
 
-<link rel="stylesheet" href="styles.css" />
-<h1> A Selection of Photos</h1>
-<div class="gallery">
+        <div class="photo">
+          <img src="images/Wrescherode2.png">
+          <p>In Grandma's Garden, Wrescherode, Harz, Germany</p>
+        </div>
 
-<div class="photo">
-    <img src="images/Wrescherode2.png">
-    <p>In Grandma's Garden, Wrescherode, Harz, Germany</p>
-  </div>
+        <div class="photo">
+          <img src="images/Wrescherode1.png">
+          <p>Grandparent's House in Wrescherode - current day</p>
+        </div>
 
-  <div class="photo">
-    <img src="images/Wrescherode1.png">
-    <p>Grandparent's House in Wrescherode - current day</p>
-  </div>
-  
-  <div class="photo">
-    <img src="images/vomStein.jpg">
-    <p>Freiherr vom Stein Gymnasium, Frankfurt a.M.</p>
-  </div>
+        <div class="photo">
+          <img src="images/vomStein.jpg">
+          <p>Freiherr vom Stein Gymnasium, Frankfurt a.M.</p>
+        </div>
 
-  <div class="photo">
-    <img src="images/sued2.jpg">
-    <p>Südbahnhof, Sachsenhausen</p>
-  </div>
+        <div class="photo">
+          <img src="images/sued2.jpg">
+          <p>Südbahnhof, Sachsenhausen</p>
+        </div>
 
-  <div class="photo">
-    <img src="images/Binding.jpg">
-    <p>Binding Brewery, Frankfurt a.M.</p>
-  </div>
+        <div class="photo">
+          <img src="images/Binding.jpg">
+          <p>Binding Brewery, Frankfurt a.M.</p>
+        </div>
 
-  <div class="photo">
-    <img src="images/Eintracht.jpg">
-    <p>Eintracht Frankfurt - World Championship Winners 1959</p>
-  </div>
+        <div class="photo">
+          <img src="images/Eintracht.jpg">
+          <p>Eintracht Frankfurt - World Championship Winners 1959</p>
+        </div>
 
-  <div class="photo">
-    <img src="images/Eintracht2.jpg">
-    <p>Eintracht Frankfurt - World Championship Winners 1959</p>
-  </div>
+        <div class="photo">
+          <img src="images/Eintracht2.jpg">
+          <p>Eintracht Frankfurt - World Championship Winners 1959</p>
+        </div>
 
-  <div class="photo">
-    <img src="images/Latscha2.jpg">
-    <p>The Latscha Company Building Frankfurt a.M.</p>
-  </div>
-</div>
+        <div class="photo">
+          <img src="images/Latscha2.jpg">
+          <p>The Latscha Company Building Frankfurt a.M.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Script (FIX) ─────────────────────────────────────────── -->
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
