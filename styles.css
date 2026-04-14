@@ -650,27 +650,31 @@ blockquote {
   .guestbook-form { padding: 1.5rem; }
 }
 /* ── Gallery ─────────────────────────────────────────────── */
-/* ── Gallery ─────────────────────────────────────────────── */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .photo {
-  max-width: 320px;
-  margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;
   background: var(--white);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .photo img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .photo:hover img {
@@ -683,7 +687,6 @@ blockquote {
   color: var(--gray);
   text-align: center;
   margin: 0;
-  line-height: 1.4;
 }
 
 /* ── Responsive ─────────────────────────────────────────── */
